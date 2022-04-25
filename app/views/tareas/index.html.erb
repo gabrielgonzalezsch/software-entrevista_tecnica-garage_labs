@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Tareas Pendientes</h1>
+
+<div id="tareas">
+  <% @tareas.each do |tarea| %>
+  <% if tarea.activo == false%>
+      <%= render tarea %>
+      <p>
+        <%= link_to "Show this tarea", tarea %>
+      
+      </p>
+    <% end %>
+  <% end %>
+</div>
+
+<h1>Tareas Listas</h1>
+
+<div id="tareas">
+  <% @tareas.each do |tarea| %>
+  <% if tarea.activo == true %>
+      <%= render tarea %>
+      <p>
+        <%= link_to "Show this tarea", tarea %>
+      </p>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "New tarea", new_tarea_path %>
