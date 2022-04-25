@@ -3,7 +3,8 @@ class TareasController < ApplicationController
 
   # GET /tareas or /tareas.json
   def index
-    @tareas = Tarea.all
+    @tareas_no_listas = Tarea.where(:activo => true)
+    @tareas_listas = Tarea.where(:activo => false)
   end
 
   # GET /tareas/1 or /tareas/1.json
@@ -22,7 +23,7 @@ class TareasController < ApplicationController
   # POST /tareas or /tareas.json
   def create
     @tarea = Tarea.new(tarea_params)
-
+    @tarea.activo = false
     respond_to do |format|
       if @tarea.save
         format.html { redirect_to tarea_url(@tarea), notice: "Tarea was successfully created." }
@@ -36,6 +37,18 @@ class TareasController < ApplicationController
 
   # PATCH/PUT /tareas/1 or /tareas/1.json
   def update
+    respond_to do |format|
+      if @tarea.update(tarea_params)
+        format.html { redirect_to tarea_url(@tarea), notice: "Tarea was successfully updated." }
+        format.json { render :show, status: :ok, location: @tarea }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @tarea.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def updateTarea
     respond_to do |format|
       if @tarea.update(tarea_params)
         format.html { redirect_to tarea_url(@tarea), notice: "Tarea was successfully updated." }
