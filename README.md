@@ -14,4 +14,15 @@ En caso de consultas, comuniquese al siguiente correo: gabriel.gonzalez.sch@gmai
 
 Adjunto Imagenes de APP
 
+# Listas Tareas
+
+![alt text](https://github.com/gabrielgonzalezsch/software-entrevista_tecnica-garage_labs/blob/main/Images/tareas.png)
+
+
+# Editar Tarea
+
+![alt text](https://github.com/gabrielgonzalezsch/software-entrevista_tecnica-garage_labs/blob/main/Images/edit.png)
+
+# Crear Tarea
+
 ![alt text](https://github.com/gabrielgonzalezsch/software-entrevista_tecnica-garage_labs/blob/main/Images/create.png)
