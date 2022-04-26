@@ -23,7 +23,7 @@ class TareasController < ApplicationController
   # POST /tareas or /tareas.json
   def create
     @tarea = Tarea.new(tarea_params)
-    @tarea.activo = false
+    @tarea.activo = true
     respond_to do |format|
       if @tarea.save
         format.html { redirect_to tarea_url(@tarea), notice: "Tarea was successfully created." }
