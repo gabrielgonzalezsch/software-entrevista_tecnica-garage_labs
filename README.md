@@ -1,4 +1,4 @@
-# App e Tareas
+# App de Tareas
 
 Para utilizar esta App se debe seguir la siguiente guia de instalación:
 
