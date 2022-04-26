@@ -10,3 +10,8 @@ la siguiente guia de instalación:
 https://blog.nubecolectiva.com/como-integrar-ruby-on-rails-5-y-bootstrap-4/
 
 En caso de consultas, comuniquese al siguiente correo: gabriel.gonzalez.sch@gmail.com.
+
+
+Adjunto Imagenes de APP
+
+![alt text](https://github.com/gabrielgonzalezsch/software-entrevista_tecnica-garage_labs/blob/main/Images/create.png)
