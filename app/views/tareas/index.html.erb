@@ -1,30 +1,76 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Tareas Pendientes</h1>
 
-<div id="tareas">
-  <% @tareas.each do |tarea| %>
-  <% if tarea.activo == false%>
-      <%= render tarea %>
-      <p>
-        <%= link_to "Show this tarea", tarea %>
-      
-      </p>
-    <% end %>
-  <% end %>
+
+<div id="tareas" >
+  <h1>Libro de Tareas</h1>
+
+    
+    <div>
+      <h2 style='color:red'>Tareas Pendientes</h2>
+      <table class="table" >
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col"><h4>Descripcion</h4></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tareas_no_listas.each_with_index do |tarea,index| %>
+            <tr>
+              <th scope="row"><%= index+1 %></th>
+              <td><%= tarea.descripcion%></td>
+              <td>
+                <p>
+                  <%= link_to '<button type="button" class="btn btn-success">Editar</button>'.html_safe, edit_tarea_path(tarea) %> 
+                </p>
+              </td>
+              <td>
+                <p>
+                  <%= button_to "Eliminar tarea",tarea, method: :delete%>
+                </p>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h2 style='color:green'>Tareas Listas</h2>
+      <table class="table" >
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col"><h4>Descripcion</h4></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tareas_listas.each_with_index do |tarea,index| %>
+            <tr>
+              <th scope="row"><%= index+1 %></th>
+              <td><%= tarea.descripcion%></td>
+              <td>
+                <p>
+                  <%= link_to '<button type="button" class="btn btn-success">Editar</button>'.html_safe, edit_tarea_path(tarea) %> 
+                </p>
+              </td>
+              <td>
+                <p>
+                  <%= button_to "Eliminar tarea",tarea, method: :delete%>
+                </p>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
 </div>
 
-<h1>Tareas Listas</h1>
-
-<div id="tareas">
-  <% @tareas.each do |tarea| %>
-  <% if tarea.activo == true %>
-      <%= render tarea %>
-      <p>
-        <%= link_to "Show this tarea", tarea %>
-      </p>
-    <% end %>
-  <% end %>
-</div>
-
-<%= link_to "New tarea", new_tarea_path %>
+<button type="button" class="btn btn-primary" onclick="window.location.href='/tareas/new';">Crear Tarea</button>
